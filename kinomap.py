@@ -45,7 +45,7 @@ ax2 = ax1.twinx()
 
 # Plot Power vs Duration
 ax2.plot(race['Duration'], race['Power'], color='blue', label='Power')
-ax2.set_ylabel('Power', color='blue')
+ax2.set_ylabel('Power(W)', color='blue')
 
 ax2.legend(shadow=True, fontsize='x-large', loc='lower left')
 # Show grid
@@ -57,12 +57,13 @@ ax1.grid(True)
 # Plot Heart rate vs Duration
 ax3.plot(race.Power, race["Smooth heart rate"], color='green',
          marker='o',  linewidth=3, markersize=5)
-ax3.set_xlabel('Power', color='blue')
-ax3.set_ylabel('Heart rate', color='red')
+ax3.set_xlabel('Power(W)', color='blue')
+ax3.set_ylabel('Heart rate(bpm)', color='red')
 ax3.set_title('Heart rate vs Power')
 
 plt.tight_layout()
 
 plt.savefig('kinomap.pdf')
+plt.savefig('kinomap.png')
 
 plt.show()
