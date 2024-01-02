@@ -1,6 +1,7 @@
 
 import pandas as pd
 import numpy as np
+import numpy as np
 import matplotlib.pyplot as plt
 
 
@@ -61,9 +62,37 @@ ax3.set_xlabel('Power(W)', color='blue')
 ax3.set_ylabel('Heart rate(bpm)', color='red')
 ax3.set_title('Heart rate vs Power')
 
+# Fit linearly the Power to the Heart rate
+fit = np.polyfit(race['Power'][0:18*60], race['Smooth heart rate'][0:18*60], 1)
+
+# Get the slope and intercept of the linear fit
+slope = fit[0]
+intercept = fit[1]
+
+# Print the slope and intercept
+print("Slope:", slope)
+print("Intercept:", intercept)
+
+# Calculate the fitted values
+fit_values = slope * race['Power'] + intercept
+
+# Plot the fit
+ax3.plot(race['Power'], fit_values, color='orange', linewidth=2, label='Fit')
+
+# Add legend to ax3
+ax3.legend(shadow=True, fontsize='x-large', loc='upper right')
+
+
 plt.tight_layout()
+
+# Add Git parameters to the plot
 
 plt.savefig('kinomap.pdf')
 plt.savefig('kinomap.png')
+
+# Display fit parameters on the second plot
+ax3.text(0.95, 0.05, f'Fit: Pulse = {slope:.2f}*Power + {intercept:.2f}\n' +
+         f'Power = {(1/slope):.2f}*(Pulse-{intercept:.2f})',
+         transform=ax3.transAxes, ha='right', va='bottom', fontsize='x-large')
 
 plt.show()
