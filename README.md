@@ -16,6 +16,16 @@ The example file shows a step test, where initially I cycled at 50 watts for 2 m
 
 You can see that in the left plot. In the right plot, you can see the correlation between power and heart rate. There is a hysteresis effect. During the cooldown, the heart rate did not decrease as quickly as it increased during the load increase. The steps reflect the gradual increase in power. The heart rate increases continuously. It was smoothed over 30 seconds.
 
+---
+
+# Progetto
+
+Analizzo i dati della mia sessione di allenamento su Kinomap. Kinomap mi invia un file CSV via email alla fine della sessione.
+
+Il file di esempio mostra un test a gradini, in cui inizialmente ho pedalato a 50 watt per 2 minuti nel programma watt dell'ergometro e ho aumentato di 25 watt ogni 2 minuti fino a raggiungere 250 watt. Successivamente ho fatto un raffreddamento in cui ho diminuito la potenza di 50 watt ogni 2 minuti.
+
+Puoi vedere questo nel grafico di sinistra. Nel grafico di destra, puoi vedere la correlazione tra potenza e frequenza cardiaca. C'è un effetto di isteresi. Durante il raffreddamento, la frequenza cardiaca non è diminuita così rapidamente come è aumentata durante l'aumento del carico. I gradini riflettono l'aumento graduale della potenza. La frequenza cardiaca aumenta continuamente. È stata smussata per 30 secondi.
+
 
 
 
