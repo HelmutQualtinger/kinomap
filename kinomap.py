@@ -72,7 +72,7 @@ intercept = fit[1]
 # Print the slope and intercept
 print("Slope:", slope)
 print("Intercept:", intercept)
-
+print(f"PWC130:: {(130-intercept)/slope:.2f} (W)")
 # Calculate the fitted values
 fit_values = slope * race['Power'] + intercept
 
@@ -80,7 +80,7 @@ fit_values = slope * race['Power'] + intercept
 ax3.plot(race['Power'], fit_values, color='orange', linewidth=2, label='Fit')
 
 # Add legend to ax3
-ax3.legend(shadow=True, fontsize='x-large', loc='upper right')
+ax3.legend(shadow=True, fontsize='x-large', loc='upper left')
 
 
 plt.tight_layout()
@@ -91,8 +91,9 @@ plt.savefig('kinomap.pdf')
 plt.savefig('kinomap.png')
 
 # Display fit parameters on the second plot
-ax3.text(0.95, 0.05, f'Fit: Pulse = {slope:.2f}*Power + {intercept:.2f}\n' +
-         f'Power = {(1/slope):.2f}*(Pulse-{intercept:.2f})',
-         transform=ax3.transAxes, ha='right', va='bottom', fontsize='x-large')
+ax3.text(0.80, 0.05, f'Pulse = {slope:.2f}*Power + {intercept:.2f}\n' +
+         f'Power = {(1/slope):.2f}*(Pulse-{intercept:.2f})\n' +
+         f'PWC130:: {(130-intercept)/slope:.2f} (W)\n',
+         transform=ax3.transAxes, ha='right', va='bottom')
 
 plt.show()
