@@ -1,4 +1,5 @@
 # Projekt
+![Alt text](https://github.com/HelmutQualtinger/kinomap/blob/6d70e6dd40239b00913adab423d5422dda0f1fa8/kinomap.png?raw=true)
 
 Ich werte die Daten meiner Kinomap Trainingssession aus. Kinomap sendet am Ende der Session unter anderem eine CSV Datei per E-mail an mich.
 
