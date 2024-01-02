@@ -91,7 +91,8 @@ plt.tight_layout()
 # Display fit parameters on the second plot
 ax3.text(0.80, 0.05, f'Pulse = {slope:.2f}*Power + {intercept:.2f}\n' +
          f'Power = {(1/slope):.2f}*(Pulse-{intercept:.2f})\n' +
-         f'PWC130:: {(130-intercept)/slope:.2f} (W)\n',
+         f'PWC130:: {(130-intercept)/slope:.2f} (W)\n' +
+         f"PWC75%:: {((220-62)*.75-intercept)/slope:.2f} (W)\n",
          transform=ax3.transAxes, ha='right', va='bottom')
 
 plt.savefig('kinomap.pdf')
